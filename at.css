@@ -65,6 +65,6 @@ header img {
 .branding {
   text-align: center;
   font-size: 13px;
- font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Mono', monospace;
   letter-spacing: 5px;
 }
