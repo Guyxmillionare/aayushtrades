@@ -35,6 +35,13 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
   color: #FFFFFF;
   border-top: 1px solid #FFFFFF;
 }
+.footer p {
+  font-size: 16px;
+  color: #FFFFFF;
+  margin: 0;
+  text-align: center;
+}
+
 header {
   background-position: center;
   background-repeat: no-repeat;
