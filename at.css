@@ -38,8 +38,9 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 .footer p {
   font-size: 16px;
   color: #FFFFFF;
-  margin: 0;
+   margin: 10px 0 0 0;
   text-align: center;
+ 
 }
 
 header {
@@ -60,4 +61,3 @@ header img {
   z-index: -1;
   opacity: 0.5; /* set the opacity of the image */
 }
-
