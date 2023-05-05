@@ -36,7 +36,6 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
   border-top: 1px solid #FFFFFF;
 }
 header {
-  background-image: url('/headerbackground.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
