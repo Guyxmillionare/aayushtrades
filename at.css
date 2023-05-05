@@ -36,13 +36,3 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
   color: #FFFFFF;
   border-top: 1px solid #FFFFFF;
 }
-.my-header::before,
-.my-header::after {
-  content: "";
-  display: inline-block;
-  height: 1px;
-  width: 30%;
-  background-color: black;
-  margin: 0 10px;
-}
-
