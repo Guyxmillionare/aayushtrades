@@ -61,6 +61,6 @@ header img {
   z-index: -1;
   opacity: 33; /* set the opacity of the image */
 }
-branding {
+.branding {
   text-align: center;
 }
