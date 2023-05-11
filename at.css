@@ -113,3 +113,6 @@ h2 {
   font-family: 'Roboto Mono', monospace;
   bottom: 50px; /* adjust top position as needed */
 }
+h4 {
+  color: #00FFFF;
+}
