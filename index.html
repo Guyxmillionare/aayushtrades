@@ -62,6 +62,7 @@
       align-items: center;
       margin-top: 20px;
     }
+
     .section2 {
       height: 70vh;
       background-color: #cccccc;
@@ -69,46 +70,32 @@
       justify-content: center;
       align-items: center;
     }
+
     .gallery {
       display: flex;
       overflow: hidden;
       max-width: fit-content;
       margin: 0 auto;
+      padding: 20px;
+      animation: slide 11s infinite;
     }
 
     .gallery img {
-      width: calc( 50% / 2 - 10px); /* Adjust the value if needed */
-      height: auto;
+      width: calc(100% / 4 - 10px); /* Adjust the value if needed */
       margin-right: 10px;
       object-fit: cover;
-      animation: slide 11s infinite;
     }
-  </style>
-  <script>
-    // JavaScript code to animate the gallery images
-    window.addEventListener('DOMContentLoaded', function() {
-      const gallery = document.querySelector('.gallery');
-      const images = gallery.getElementsByTagName('img');
-      const imageCount = images.length;
-      const imageWidth = images[0].offsetWidth;
-      let currentPosition = 0;
-      let animation;
 
-      function animateGallery() {
-        currentPosition -= 1; // Adjust the value to change the speed of the animation
-        gallery.style.transform = `translateX(${currentPosition}px)`;
-
-        if (currentPosition <= -imageWidth) {
-          currentPosition += imageWidth;
-          gallery.appendChild(gallery.firstElementChild);
-        }
-
-        animation = requestAnimationFrame(animateGallery);
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
       }
 
-      animateGallery();
-    });
-  </script>
+      100% {
+        transform: translateX(calc(-70% - 10px));
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -118,10 +105,13 @@
     <div class="section1">
       <!-- Content for the first section -->
       <div class="gallery">
+
+        <img src="/codeless/BANKNIFTY.png" alt="Image 2">
         <img src="/codeless/NIFTY.png" alt="Image 3">
         <img src="/codeless/EURJPY.png" alt="Image 6">
         <img src="/codeless/GBPUSD.png" alt="Image 4">
         <img src="/codeless/GBPUSD1.png" alt="Image 5">
+        <img src="/codeless/FINNIFFTY.png" alt="Image 1">
         <!-- Add more images here -->
       </div>
     </div>
@@ -129,6 +119,29 @@
       <!-- Content for the second section -->
     </div>
   </header>
+
+  <script>
+    const gallery = document.querySelector('.gallery');
+    const galleryImages = document.querySelectorAll('.gallery img');
+    let currentImageIndex = 0;
+
+    function showNextImage() {
+      gallery.style.transition = 'transform 0.5s ease-in-out';
+
+      if (currentImageIndex === galleryImages.length - 1) {
+        // If it's the last image, reset index and bring back the first image
+        currentImageIndex = 0;
+        gallery.style.transform = `translateX(0)`;
+        setTimeout(showNextImage, 1000); // Delay before starting the animation again
+      } else {
+        currentImageIndex++;
+        gallery.style.transform = `translateX(${-100 * currentImageIndex}%)`;
+      }
+    }
+
+    setInterval(showNextImage, 5000);
+  </script>
+
 </body>
 
 </html>
