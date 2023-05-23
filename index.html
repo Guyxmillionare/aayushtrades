@@ -79,11 +79,13 @@
     }
 
     .gallery img {
-      width: 400px;
-      height: auto;
-      margin-right: 10px;
-      object-fit: cover;
-    }
+  width: calc(100% / 6 - 10px); /* Adjust the value if needed */
+  height: auto;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+
 
     @keyframes slide {
       0% {
@@ -121,17 +123,26 @@
 
   <script>
     const gallery = document.querySelector('.gallery');
-    const galleryImages = document.querySelectorAll('.gallery img');
-    let currentImageIndex = 0;
+const galleryImages = document.querySelectorAll('.gallery img');
+let currentImageIndex = 0;
 
-    function showNextImage() {
-      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-      gallery.style.transition = 'transform 0.5s ease-in-out';
-      gallery.style.transform = `translateX(${-100 * currentImageIndex}%)`;
-    }
+function showNextImage() {
+  gallery.style.transition = 'transform 0.5s ease-in-out';
 
-    setInterval(showNextImage, 5000);
+  if (currentImageIndex === galleryImages.length - 1) {
+    // If it's the last image, reset index and bring back the first image
+    currentImageIndex = 0;
+    gallery.style.transform = `translateX(0)`;
+  } else {
+    currentImageIndex++;
+    gallery.style.transform = `translateX(${-100 * currentImageIndex}%)`;
+  }
+}
+
+setInterval(showNextImage, 5000);
+
   </script>
+  
 </body>
 
 </html>
