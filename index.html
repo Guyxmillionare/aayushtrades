@@ -24,7 +24,6 @@
     body {
       background-color: white;
       font-family: 'Poppins', sans-serif;
-      display: flex;
     }
 
     header {
@@ -34,7 +33,6 @@
       font-size: 2.8rem;
       justify-content: center;
       text-align: center;
-      width: 35%; /* Set width for section one */
       padding: 20px;
     }
 
@@ -52,7 +50,6 @@
     }
 
     .content {
-      flex: 1; /* Let section two take remaining space */
       padding: 20px;
     }
 
@@ -65,14 +62,14 @@
 
     .images img {
       margin: 10px;
-      max-width: 100%; /* Make the images responsive */
+      max-width: 100%;
       height: auto;
     }
 
     /* Media queries for responsiveness */
     @media screen and (max-width: 768px) {
       header {
-        width: 100%; /* Set full width on smaller screens */
+        font-size: 2rem;
       }
     }
   </style>
