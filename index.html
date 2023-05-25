@@ -24,6 +24,7 @@
     body {
       background-color: white;
       font-family: 'Poppins', sans-serif;
+      display: flex;
     }
 
     header {
@@ -33,37 +34,46 @@
       font-size: 2.8rem;
       justify-content: center;
       text-align: center;
+      width: 35%; /* Set width for section one */
+      padding: 20px;
     }
 
     .logo {
-      display: flex;
-      text-align: center;
-      justify-content: center;
       text-align: center;
       color: black;
       margin-top: 22px;
     }
 
     h6 {
-      display: flex;
-      text-align: center;
-      justify-content: center;
       text-align: center;
       color: black;
       font-size: 19px;
       margin-bottom: 2px;
     }
 
+    .content {
+      flex: 1; /* Let section two take remaining space */
+      padding: 20px;
+    }
+
     .images {
       display: flex;
-      justify-content: center;
+      flex-wrap: wrap;
       background-color: #333333;
-    padding: 20px; /* Add padding for spacing */
+      padding: 20px;
     }
 
     .images img {
       margin: 10px;
-      max-width: 230px;
+      max-width: 100%; /* Make the images responsive */
+      height: auto;
+    }
+
+    /* Media queries for responsiveness */
+    @media screen and (max-width: 768px) {
+      header {
+        width: 100%; /* Set full width on smaller screens */
+      }
     }
   </style>
 </head>
@@ -73,6 +83,10 @@
     <div class="logo">AayushTrades</div>
     <h6>"Become a part of Pro Traders"</h6>
   </header>
+
+  <div class="content">
+    <!-- Content goes here -->
+  </div>
 
   <div class="images">
     <img src="/loadable/BANKNIFTY.png" alt="Image 1">
