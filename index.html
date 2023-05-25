@@ -14,7 +14,8 @@
   <title>Master Trading Completely | AayushTrades</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -22,9 +23,9 @@
     }
 
     body {
-      background-color: #333333;
+      background-color: white;
       font-family: 'Poppins', sans-serif;
-      height: 500vh
+      height: 200vh;
     }
 
     header {
@@ -50,27 +51,38 @@
       margin-bottom: 5px;
     }
 
-    
-
     .images {
       display: flex;
       flex-wrap: wrap;
       background-color: #333333;
       padding: 20px;
       position: relative;
+      margin-top: 30px; /* Add margin to top */
     }
 
-    .images img {
-      max-width: 100%;
+    .image-container {
+      position: relative;
+      width: calc(33.33% - 20px);
+      margin-right: 20px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .image-container img {
+      display: block;
+      width: 100%;
       height: auto;
-      margin-bottom: 10px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      animation: slideInOut 16s infinite;
-      margin-top: 33px;
-      background-color: #333333;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .image-container:hover img {
+      transform: scale(1.05);
+    }
+    h1{
+      font-family: 'Poppins', sans-serif;
+      margin-top: 40px;
     }
 
     @keyframes slideInOut {
@@ -78,18 +90,22 @@
         opacity: 0;
         transform: translateX(-100%);
       }
+
       6.25% {
         opacity: 1;
         transform: translateX(0);
       }
+
       37.5% {
         opacity: 1;
         transform: translateX(0);
       }
+
       56.25% {
         opacity: 0;
         transform: translateX(100%);
       }
+
       100% {
         opacity: 0;
         transform: translateX(100%);
@@ -100,6 +116,16 @@
     @media screen and (max-width: 768px) {
       header {
         font-size: 2rem;
+      }
+
+      .image-container {
+        width: calc(50% - 20px);
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      .image-container {
+        width: 100%;
       }
     }
   </style>
@@ -112,25 +138,48 @@
   </header>
 
   <div class="images">
-    <img src="/loadable/WIPRO.png" alt="Image 7">
-    <img src="/loadable/GBPUSD.png" alt="Image 3">
-    <img src="/loadable/BANKNIFTY.png" alt="Image 1">
-    <img src="/loadable/GBPUSD1.png" alt="Image 4">
-    <img src="/loadable/NIFTY.png" alt="Image 5">
-    <img src="/loadable/FINNIFFTY.png" alt="Image 6">
-    <img src="/loadable/EURJPY.png" alt="Image 2">
+    <div class="image-container">
+      <img src="/loadable/WIPRO.png" alt="Image 7">
+    </div>
+    <div class="image-container">
+      <img src="/loadable/GBPUSD.png" alt="Image 3">
+    </div>
+    <div class="image-container">
+      <img src="/loadable/BANKNIFTY.png" alt="Image 1">
+    </div>
+    <div class="image-container">
+      <img src="/loadable/GBPUSD1.png" alt="Image 4">
+    </div>
+    <div class="image-container">
+      <img src="/loadable/NIFTY.png" alt="Image 5">
+    </div>
+    <div class="image-container">
+      <img src="/loadable/FINNIFFTY.png" alt="Image 6">
+    </div>
+    <div class="image-container">
+      <img src="/loadable/EURJPY.png" alt="Image 2">
+    </div>
   </div>
 
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const images = document.querySelectorAll('.images img');
-      let delay = 0;
+  <h1 id="typing-effect"></h1>
 
-      images.forEach((image, index) => {
-        image.style.animationDelay = `${delay}s`;
-        delay += 2; // Increase delay for each image by 2 seconds
-      });
-    });
+  <script>
+    function startTypingEffect() {
+      const element = document.getElementById('typing-effect');
+      const text = "If you want to make money, this is the only way. Believe me, I have been on the chart for 10 hours every day to achieve success and be profitable. So learn all the things I teach you.";
+      element.innerHTML = '';
+
+      let i = 0;
+      const typingInterval = setInterval(() => {
+        element.innerHTML += text.charAt(i);
+        i++;
+        if (i === text.length) {
+          clearInterval(typingInterval);
+        }
+      }, 50);
+    }
+
+    window.addEventListener('DOMContentLoaded', startTypingEffect);
   </script>
 </body>
 
