@@ -58,12 +58,41 @@
       flex-wrap: wrap;
       background-color: #333333;
       padding: 20px;
+      position: relative;
     }
 
     .images img {
       max-width: 100%;
       height: auto;
       margin-bottom: 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      animation: slideInOut 7s infinite;
+    }
+
+    @keyframes slideInOut {
+      0% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      10% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      70% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      80% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
     }
 
     /* Media queries for responsiveness */
@@ -95,6 +124,17 @@
     <img src="/loadable/WIPRO.png" alt="Image 7">
   </div>
 
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const images = document.querySelectorAll('.images img');
+      let delay = 0;
+
+      images.forEach((image, index) => {
+        image.style.animationDelay = `${delay}s`;
+        delay += 2; // Increase delay for each image by 2 seconds
+      });
+    });
+  </script>
 </body>
 
 </html>
