@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us</title>  
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700|Google+Sans:400,500|Product+Sans:400&display=swap&lang=en">
+  <style>
+    /* Define font styles */
+    html {
+      --google-font-family: "Google Sans", Roboto, Arial, Helvetica;
+      --roboto-font-family: "Roboto", sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 0 209px;
+      font-family: var(--roboto-font-family);
+      background-color: #fff;
+      color: #000;
+      overflow-y: scroll;
+      padding-top: 64px; /* Adjusted padding to reduce space above the navigation bar */
+    }
+    
+    .header {
+      background: rgb(255, 255, 255);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Center the contents horizontally */
+      padding: 0 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      justify-content: center;
+    }
+    
+    .logocenter {
+      font-size: 30px;
+      font-weight: 400;
+      color: black;
+      font-family: var(--google-font-family);
+      display: flex;
+      justify-content: center; /* Add this property to center the logo horizontally */
+      align-items: center; /* Add this property to center the logo vertically */
+      height: 100%; /* Add this property to fill the height of the header */
+    }
+    
+    .navbar {
+      background: #fefefe;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    
+    .navbar a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 10px;
+      font-family: var(--google-font-family);
+      font-size: 16px;
+      font-weight: 500;
+     
+      
+      
+    }
+    
+    .navbar a:hover {
+      color: red; /* Change the color on hover */
+      transform: scale(1.05); /* Add scaling effect on hover */
+    }
+    
+    
+    .navbar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  max-height: 200px; /* Set a maximum height for the dropdown content */
+  overflow-y: auto; /* Add vertical scroll if the content exceeds the maximum height */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.navbar .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+    
+    .navbar .dropdown-arrow {
+      margin-left: 5px;
+      font-size: 12px;
+    }
+    
+    .footer {
+      background-color: #fefefe;
+      text-align: center;
+      padding: 20px;
+      z-index: 100;
+      text-decoration-color: black;
+      font-family: var(--google-font-family);
+    }
+    
+    .footer a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 10px;
+      font-family: var(--google-font-family);
+      font-size: 21px;
+    }
+    
+    .footer a:hover {
+      color: red; /* Change the color on hover */
+      transform: scale(1.05); /* Add scaling effect on hover */
+    }
+    
+    .recent-heading {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 400;
+      margin: 40px 0;
+      font-family: var(--google-font-family); /* Use the var(--google-font-family) for the recent heading */
+      padding-top: 16px;
+     
+    }
+    
+    .blog-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .blog-card {
+      width: 300px;
+      margin: 10px;
+      padding: 10px 20px; /* Adjusted padding values */
+      border: 1px solid #fcf6f6;
+      background-color: transparent;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .blog-title {
+      font-weight: 400;
+      font-size: 18px;
+      font-family: var(--google-font-family);
+    }
+    
+    .blog-content {
+      margin-top: 4px;
+      font-size: 14px;
+      line-height: 1.5;
+      font-family: var(--google-font-family);
+      font-weight: 200;
+    }
+    
+    .load-more-button {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0px;
+     padding-top:  7px;
+    }
+    
+    .load-more-button button {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-family: var(--google-font-family);
+      font-weight: 500;
+      background-color: #000;
+      border: 1px solid #000;
+      cursor: pointer;
+      color: #fefefe;
+    }
+    
+    .load-more-button button:hover {
+      
+      color: aqua;
+    }
+    h1, h2, h3 {
+      font-weight: 600;
+      font-family: var(--google-font-family); 
+    }
+    
+    p {
+      font-weight: 300;
+      line-height: 1.6;
+      font-family: var(--google-font-family);
+    }
+    
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      font-family: var(--google-font-family);
+    }
+    
+    .header h1 {
+      font-size: 36px;
+      font-family: var(--google-font-family);
+    }
+    
+    .mission {
+      margin-bottom: 40px;
+      font-family: var(--google-font-family);
+    }
+    
+    .approach {
+      margin-bottom: 40px;
+      font-family: var(--google-font-family);
+    }
+    
+    .community {
+      margin-bottom: 40px;
+      font-family: var(--google-font-family);
+    }
+    
+    .contact {
+      margin-bottom: 40px;
+      font-family: var(--google-font-family);
+    }
+    
+    .contact-email {
+      font-weight: 400;
+      font-size: 18px;
+      color: #000;
+      font-family: var(--google-font-family);
+    }
+    
+    .contact-email a {
+      color: #000;
+      text-decoration: none;
+      border-bottom: 1px solid #000;
+      font-family: var(--google-font-family);
+    }
+    
+    .contact-email a:hover {
+      color: red;
+      border-bottom-color: red;
+      font-family: var(--google-font-family);
+    }
+  
+    
+    @media screen and (min-width: 377px) and (max-width: 1200px)  {
+      body {
+      margin: 0;
+      padding: 0 30px;
+      font-family: var(--roboto-font-family);
+      background-color: #fff;
+      color: #000;
+      overflow-y: scroll;
+      padding-top: 64px; /* Adjusted padding to reduce space above the navigation bar */
+    }
+    
+    .header {
+      background: rgb(255, 255, 255);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Center the contents horizontally */
+      padding: 0 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      justify-content: center;
+    }
+    
+    .logocenter {
+      font-size: 30px;
+      font-weight: 400;
+      color: black;
+      font-family: var(--google-font-family);
+      display: flex;
+      justify-content: center; /* Add this property to center the logo horizontally */
+      align-items: center; /* Add this property to center the logo vertically */
+      height: 100%; /* Add this property to fill the height of the header */
+    }
+    
+    .navbar {
+      background: #fefefe;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    
+    .navbar a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 6px;
+      font-family: var(--google-font-family);
+      font-size: 16px;
+      font-weight: 500; 
+    }
+    
+    .navbar a:hover {
+      color: red; /* Change the color on hover */
+      transform: scale(1.05); /* Add scaling effect on hover */
+    }
+    
+    
+    .navbar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  max-height: 200px; /* Set a maximum height for the dropdown content */
+  overflow-y: auto; /* Add vertical scroll if the content exceeds the maximum height */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.navbar .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+    
+    .navbar .dropdown-arrow {
+      margin-left: 5px;
+      font-size: 12px;
+    }
+    
+    .footer {
+      background-color: #fefefe;
+      text-align: center;
+      
+      z-index: 100;
+      text-decoration-color: black;
+      font-family: var(--google-font-family);
+    }
+    
+    .footer a {
+      color: #000;
+      text-decoration: none;
+      margin: px 59px;
+      font-family: var(--google-font-family);
+      font-size: 20px;
+      
+    }
+    
+    .footer a:hover {
+      color: red; /* Change the color on hover */
+      transform: scale(1.05); /* Add scaling effect on hover */
+    }
+    
+    .recent-heading {
+      text-align: center;
+      font-size: 34px;
+      font-weight: 400;
+      margin: 15px 0;
+      font-family: var(--google-font-family); /* Use the var(--google-font-family) for the recent heading */
+      padding-top: 32px;
+     
+    }
+    
+    .blog-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .blog-card {
+      width: 300px;
+      margin: 10px;
+      padding: 10px 20px; /* Adjusted padding values */
+      border: 1px solid #fcf6f6;
+      background-color: transparent;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .blog-title {
+      font-weight: 400;
+      font-size: 18px;
+      font-family: var(--google-font-family);
+    }
+    
+    .blog-content {
+      margin-top: 4px;
+      font-size: 14px;
+      line-height: 1.5;
+      font-family: var(--google-font-family);
+      font-weight: 200;
+    }
+    
+    .load-more-button {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0px;
+     padding-top:  7px;
+    }
+    
+    .load-more-button button {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-family: var(--google-font-family);
+      font-weight: 500;
+      background-color: #000;
+      border: 1px solid #000;
+      cursor: pointer;
+      color: #fefefe;
+    }
+    
+    .load-more-button button:hover {
+      
+      color: aqua;
+    }
+  }
+  
+  @media screen and (min-width: 425px) and (max-width: 781px)  {
+    .recent-heading {
+      text-align: center;
+      font-size: 34px;
+      font-weight: 400;
+      margin: 12px 10px;
+      font-family: var(--google-font-family); /* Use the var(--google-font-family) for the recent heading */
+      padding-top: 32px;
+      
+     
+    }
+    .footer a {
+      color: #000;
+      text-decoration: none;
+      margin-left: 7px;
+      font-family: var(--google-font-family);
+      font-size: 20px;
+    
+    }
+
+  }
+  @media screen and (min-width: 300px) and (max-width: 376px)  {
+    .navbar a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 6px;
+      font-family: var(--google-font-family);
+      font-size: 16px;
+      font-weight: 500; 
+      padding: 0px 0px;
+    }
+    body {
+      margin: 0;
+      padding: 0 30px;
+      font-family: var(--roboto-font-family);
+      background-color: #fff;
+      color: #000;
+      overflow-y: scroll;
+      padding-top: 64px; /* Adjusted padding to reduce space above the navigation bar */
+    }
+    .navbar a {
+      padding: 0px 0px;
+      color: #000;
+      text-decoration: none;
+      margin: 0 5px;
+      font-family: var(--google-font-family);
+      font-size: 13px;
+      font-weight: 500; 
+    }
+  }
+    
+  </style>
+    
+  
+
+  <!-- Add the Google AdSense code -->
+  <script data-ad-client="YOUR_ADSENSE_CLIENT_ID" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="header">
+    <div class="logocenter">
+      AayushTrades
+    </div>
+  </div>
+
+  <div class="navbar">
+    <a href="blogs.googlypedia.com">Home</a>
+    <div class="dropdown">
+      <a href="#">Pages<span class="dropdown-arrow">▼</span></a>
+      <div class="dropdown-content">
+        <a href="#">Trending</a>
+        <a href="#">Popular</a>
+        <a href="#">Featured</a>
+        <a href="#">Recent</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#">Categories<span class="dropdown-arrow">▼</span></a>
+      <div class="dropdown-content">
+        <a href="#">Technology</a>
+        <a href="#">Entertainment</a>
+        <a href="#">Sports</a>
+        <a href="#">Health</a>
+        <a href="#">Science</a>
+        <a href="#">Food</a>
+        <a href="#">Fashion</a>
+        <a href="#">Travel</a>
+        <a href="#">Fitness</a>
+        <a href="#">Gaming</a>
+      </div>
+    </div>
+    <a href="/About.html">About</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+  <div class="container">
+    <h1 class="recent-heading">AboutUs</h1>
+
+    <div class="mission">
+      <h2>Our Mission</h2>
+      <p>Welcome to AayushTrades.com! We are a passionate team of writers and enthusiasts dedicated to bringing you engaging and informative content on a wide range of topics. Our goal is to entertain, inspire, and educate our readers through our blog posts.</p>
+    </div>
+
+    <div class="expertise">
+      <h2>Our Expertise</h2>
+      <p>With a team of experienced writers who are passionate about their respective fields, AayushTrades.com delivers well-researched and high-quality content. Our writers possess deep knowledge and expertise in various subjects, ensuring that every article is accurate, credible, and engaging. We continuously update our knowledge base to stay at the forefront of the latest trends and discoveries, bringing you the most relevant and up-to-date information.</p>
+    </div>
+
+    <div class="approach">
+      <h2>Our Approach</h2>
+      <p>At AayushTrades.com, we believe in making knowledge accessible to all. We understand that learning is a lifelong journey, and we strive to simplify complex concepts and ideas, making them easily understandable for readers of all backgrounds. We aim to strike a balance between providing in-depth information and maintaining an engaging writing style that keeps our readers hooked from start to finish.</p>
+    </div>
+
+    <div class="community">
+      <h2>Our Community</h2>
+      <p>We value our community of readers and their active participation in shaping AayushTrades.com. We encourage you to leave comments, share your thoughts, and engage in discussions on our articles. We believe in fostering a supportive and inclusive environment where everyone's voice is heard and respected. Together, we can create a vibrant community of knowledge seekers who inspire and learn from one another.</p>
+    </div>
+
+    <div class="contact">
+      <h2>Contact Us</h2>
+      <p>If you have any questions, suggestions, or feedback, we would love to hear from you. Please feel free to reach out to us by sending an email to <span class="contact-email"><a href="mailto:support@aayushtrades.com">support@Aayushtrades.com</a></span>. We appreciate your input and strive to continuously improve your experience on AayushTrades.com.</p>
+    </div>
+
+    <p>Thank you for being a part of our journey. We hope that aayushtrades.com becomes your go-to destination for insightful and entertaining articles that expand your horizons and satisfy your curiosity.</p>
+  </div>
+  
+
+  
+  <div class="footer">
+    <a href="About.html">About</a>
+    <a href="/Terms&Conditions.html">Terms&conditions</a>
+    <a href="/Privacypolicy.html">PrivacyPolicy</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  
+</body>
+</html>
+

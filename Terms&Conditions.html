@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Terms&Conditions</title>   
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700|Google+Sans:400,500|Product+Sans:400&display=swap&lang=en">
+  <style>
+    /* Define font styles */
+    html {
+      --google-font-family: "Google Sans", Roboto, Arial, Helvetica;
+      --roboto-font-family: "Roboto", sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 0 209px;
+      font-family: var(--roboto-font-family);
+      background-color: #fff;
+      color: #000;
+      overflow-y: scroll;
+      padding-top: 64px; /* Adjusted padding to reduce space above the navigation bar */
+    }
+    
+    .header {
+      background: rgb(255, 255, 255);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Center the contents horizontally */
+      padding: 0 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      justify-content: center;
+    }
+    
+    .logocenter {
+      font-size: 30px;
+      font-weight: 400;
+      color: black;
+      font-family: var(--google-font-family);
+      display: flex;
+      justify-content: center; /* Add this property to center the logo horizontally */
+      align-items: center; /* Add this property to center the logo vertically */
+      height: 100%; /* Add this property to fill the height of the header */
+    }
+    
+    .navbar {
+      background: #fefefe;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    
+    .navbar a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 10px;
+      font-family: var(--google-font-family);
+      font-size: 16px;
+      font-weight: 500;
+     
+      
+      
+    }
+    
+    .navbar a:hover {
+      color: red; /* Change the color on hover */
+      transform: scale(1.05); /* Add scaling effect on hover */
+    }
+    
+    
+    .navbar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  max-height: 200px; /* Set a maximum height for the dropdown content */
+  overflow-y: auto; /* Add vertical scroll if the content exceeds the maximum height */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.navbar .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+    
+    .navbar .dropdown-arrow {
+      margin-left: 5px;
+      font-size: 12px;
+    }
+    
+    .footer {
+      background-color: #fefefe;
+      text-align: center;
+      padding: 20px;
+      z-index: 100;
+      text-decoration-color: black;
+      font-family: var(--google-font-family);
+    }
+    
+    .footer a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 10px;
+      font-family: var(--google-font-family);
+      font-size: 21px;
+    }
+    
+    .footer a:hover {
+      color: red; /* Change the color on hover */
+      transform: scale(1.05); /* Add scaling effect on hover */
+    }
+    
+    .recent-heading {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 400;
+      margin: 40px 0;
+      font-family: var(--google-font-family); /* Use the var(--google-font-family) for the recent heading */
+      padding-top: 16px;
+     
+    }
+    .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-top: 0;
+    font-family: var(--google-font-family);
+  }
+
+  p {
+    margin-bottom: 16px;
+    font-family: var(--google-font-family);
+  }
+
+  /* Link styles */
+  a {
+    color: #000;
+    text-decoration: none;
+    font-family: var(--google-font-family);
+  }
+
+  a:hover {
+    color: red;
+    font-family: var(--google-font-family);
+  }
+
+  /* List styles */
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-family: var(--google-font-family);
+  }
+
+  ul li:before {
+    content: "•";
+    margin-right: 8px;
+    font-family: var(--google-font-family);
+  }
+    
+    .blog-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .blog-card {
+      width: 300px;
+      margin: 10px;
+      padding: 10px 20px; /* Adjusted padding values */
+      border: 1px solid #fcf6f6;
+      background-color: transparent;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .blog-title {
+      font-weight: 400;
+      font-size: 18px;
+      font-family: var(--google-font-family);
+    }
+    
+    .blog-content {
+      margin-top: 4px;
+      font-size: 14px;
+      line-height: 1.5;
+      font-family: var(--google-font-family);
+      font-weight: 200;
+    }
+    
+    .load-more-button {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0px;
+     padding-top:  7px;
+    }
+    
+    .load-more-button button {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-family: var(--google-font-family);
+      font-weight: 500;
+      background-color: #000;
+      border: 1px solid #000;
+      cursor: pointer;
+      color: #fefefe;
+    }
+    
+    .load-more-button button:hover {
+      
+      color: aqua;
+    }
+    
+    @media screen and (min-width: 377px) and (max-width: 1200px)  {
+      body {
+      margin: 0;
+      padding: 0 30px;
+      font-family: var(--roboto-font-family);
+      background-color: #fff;
+      color: #000;
+      overflow-y: scroll;
+      padding-top: 64px; /* Adjusted padding to reduce space above the navigation bar */
+    }
+    
+    .header {
+      background: rgb(255, 255, 255);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Center the contents horizontally */
+      padding: 0 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      justify-content: center;
+    }
+    
+    .logocenter {
+      font-size: 30px;
+      font-weight: 400;
+      color: black;
+      font-family: var(--google-font-family);
+      display: flex;
+      justify-content: center; /* Add this property to center the logo horizontally */
+      align-items: center; /* Add this property to center the logo vertically */
+      height: 100%; /* Add this property to fill the height of the header */
+    }
+    
+    .navbar {
+      background: #fefefe;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    
+    .navbar a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 6px;
+      font-family: var(--google-font-family);
+      font-size: 16px;
+      font-weight: 500; 
+    }
+    
+    .navbar a:hover {
+      color: red; /* Change the color on hover */
+      transform: scale(1.05); /* Add scaling effect on hover */
+    }
+    
+    
+    .navbar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  max-height: 200px; /* Set a maximum height for the dropdown content */
+  overflow-y: auto; /* Add vertical scroll if the content exceeds the maximum height */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.navbar .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+    
+    .navbar .dropdown-arrow {
+      margin-left: 5px;
+      font-size: 12px;
+    }
+    
+    .footer {
+      background-color: #fefefe;
+      text-align: center;
+      
+      z-index: 100;
+      text-decoration-color: black;
+      font-family: var(--google-font-family);
+    }
+    
+    .footer a {
+      color: #000;
+      text-decoration: none;
+      margin: px 59px;
+      font-family: var(--google-font-family);
+      font-size: 20px;
+      
+    }
+    
+    .footer a:hover {
+      color: red; /* Change the color on hover */
+      transform: scale(1.05); /* Add scaling effect on hover */
+    }
+    
+    .recent-heading {
+      text-align: center;
+      font-size: 34px;
+      font-weight: 400;
+      margin: 15px 0;
+      font-family: var(--google-font-family); /* Use the var(--google-font-family) for the recent heading */
+      padding-top: 32px;
+     
+    }
+    
+    .blog-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .blog-card {
+      width: 300px;
+      margin: 10px;
+      padding: 10px 20px; /* Adjusted padding values */
+      border: 1px solid #fcf6f6;
+      background-color: transparent;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .blog-title {
+      font-weight: 400;
+      font-size: 18px;
+      font-family: var(--google-font-family);
+    }
+    
+    .blog-content {
+      margin-top: 4px;
+      font-size: 14px;
+      line-height: 1.5;
+      font-family: var(--google-font-family);
+      font-weight: 200;
+    }
+    
+    .load-more-button {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0px;
+     padding-top:  7px;
+    }
+    
+    .load-more-button button {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-family: var(--google-font-family);
+      font-weight: 500;
+      background-color: #000;
+      border: 1px solid #000;
+      cursor: pointer;
+      color: #fefefe;
+    }
+    
+    .load-more-button button:hover {
+      
+      color: aqua;
+    }
+  }
+  
+  @media screen and (min-width: 425px) and (max-width: 781px)  {
+    .recent-heading {
+      text-align: center;
+      font-size: 34px;
+      font-weight: 400;
+      margin: 12px 10px;
+      font-family: var(--google-font-family); /* Use the var(--google-font-family) for the recent heading */
+      padding-top: 32px;
+      
+     
+    }
+    .footer a {
+      color: #000;
+      text-decoration: none;
+      margin-left: 7px;
+      font-family: var(--google-font-family);
+      font-size: 20px;
+    
+    }
+
+  }
+  @media screen and (min-width: 300px) and (max-width: 376px)  {
+    .navbar a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 6px;
+      font-family: var(--google-font-family);
+      font-size: 16px;
+      font-weight: 500; 
+      padding: 0px 0px;
+    }
+    body {
+      margin: 0;
+      padding: 0 30px;
+      font-family: var(--roboto-font-family);
+      background-color: #fff;
+      color: #000;
+      overflow-y: scroll;
+      padding-top: 64px; /* Adjusted padding to reduce space above the navigation bar */
+    }
+    .navbar a {
+      padding: 0px 0px;
+      color: #000;
+      text-decoration: none;
+      margin: 0 5px;
+      font-family: var(--google-font-family);
+      font-size: 13px;
+      font-weight: 500; 
+    }
+    .recent-heading {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 400;
+      margin: 12px 0px;
+      font-family: var(--google-font-family); /* Use the var(--google-font-family) for the recent heading */
+      padding-top: 32px;
+  }
+}
+  </style>
+  <!-- Add the Google AdSense code -->
+  <script data-ad-client="YOUR_ADSENSE_CLIENT_ID" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  </head>
+<body>
+  <div class="header">
+    <div class="logocenter">
+      AayushTrades
+    </div>
+  </div>
+
+  <div class="navbar">
+    <a href="aayushtrades.com">Home</a>
+    <div class="dropdown">
+      <a href="#">Pages<span class="dropdown-arrow">▼</span></a>
+      <div class="dropdown-content">
+        <a href="#">Trending</a>
+        <a href="#">Popular</a>
+        <a href="#">Featured</a>
+        <a href="#">Recent</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#">Categories<span class="dropdown-arrow">▼</span></a>
+      <div class="dropdown-content">
+        <a href="#">Technology</a>
+        <a href="#">Entertainment</a>
+        <a href="#">Sports</a>
+        <a href="#">Health</a>
+        <a href="#">Science</a>
+        <a href="#">Food</a>
+        <a href="#">Fashion</a>
+        <a href="#">Travel</a>
+        <a href="#">Fitness</a>
+        <a href="#">Gaming</a>
+      </div>
+    </div>
+    <a href="/About.html">About</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+
+  <h1 class="recent-heading">Terms&Conditions</h1>
+  <div class="container">
+  
+    <p>Welcome to Aayushtrades.com (referred to as "Website" or "Site"). These Terms &amp; Conditions outline the rules and regulations for accessing and using our website. By using or accessing AayushTrades.com, you agree to comply with these Terms &amp; Conditions. Please read them carefully.</p>
+
+    <ol>
+      <li>
+        <strong>Acceptance of Terms</strong>
+        <p>By accessing this website, you acknowledge that you have read, understood, and agree to be bound by these Terms &amp; Conditions. If you do not agree to these terms, please do not use the Website.</p>
+      </li>
+      <li>
+        <strong>Content</strong>
+        <ol>
+          <li>
+            <p>All content provided on Aayushtrades.com is for informational purposes only. We strive to ensure the accuracy and reliability of the information, but we do not guarantee its completeness or timeliness. The content is subject to change without notice.</p>
+          </li>
+          <li>
+            <p>The content on AayushTrades.com is the intellectual property of the website owner and protected by applicable copyright laws. Unauthorized use of any content may violate copyright, trademark, and other laws.</p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <strong>User Conduct</strong>
+        <ol>
+          <li>
+            <p>You agree not to engage in any activity that may disrupt or interfere with the proper functioning of the Website or any services provided.</p>
+          </li>
+          <li>
+            <p>You are solely responsible for any content you submit or post on the Website. By submitting content, you grant us a non-exclusive, royalty-free, perpetual, irrevocable, and fully sublicensable right to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, and display such content worldwide.</p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <strong>Third-Party Websites</strong>
+        <p>AayushTradescom may contain links to third-party websites or services. We do not have control over the content or practices of these third-party websites and are not responsible for their actions. We encourage you to review their terms of service and privacy policies before using their services.</p>
+      </li>
+      <li>
+        <strong>Privacy</strong>
+        <ol>
+          <li>
+            <p>We take your privacy seriously. Our Privacy Policy explains how we collect, use, and disclose information from users of the Website.</p>
+          </li>
+          <li>
+            <p>By using the Website, you consent to the collection, use, and disclosure of your personal information as described in our Privacy Policy.</p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <strong>Disclaimer of Warranties</strong>
+        <ol>
+          <li>
+            <p>The Website and its content are provided on an "as-is" and "as available" basis without any warranties, expressed or implied. We do not guarantee that the Website will be error-free, uninterrupted, or free of viruses.</p>
+          </li>
+          <li>
+            <p>We disclaim all warranties, including but not limited to, the accuracy, completeness, merchantability, fitness for a particular purpose, and non-infringement of intellectual property.</p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <strong>Limitation of Liability</strong>
+        <ol>
+          <li>
+            <p>In no event shall we be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of or relating to your use or inability to use the Website or its content.</p>
+          </li>
+          <li>
+            <p>We shall not be liable for any errors, omissions, interruptions, or delays in the content or any loss or damage arising from your reliance on it.</p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <strong>Indemnification</strong>
+        <p>You agree to indemnify and hold AayushTrades.com and its owners, employees, agents, and affiliates harmless from any claims, liabilities, damages, losses, or expenses arising out of your use of the Website or violation of these Terms &amp; Conditions.</p>
+      </li>
+      <li>
+        <strong>Modifications</strong>
+        <p>We reserve the right to modify or replace these Terms &amp; Conditions at any time without prior notice. Your continued use of the Website after any changes constitutes acceptance of the modified Terms &amp; Conditions.</p>
+      </li>
+      <li>
+        <strong>Contact Information</strong>
+        <p>If you have any questions or concerns about these Terms &amp; Conditions, please contact us at <a href="mailto:contact@aayushtrades.com">support@aayushtrades.com</a>.</p>
+      </li>
+    </ol>
+
+    <p>By using AayushTrades.com, you acknowledge that you have read, understood, and agreed to these Terms &amp; Conditions.</p>
+  </div>
+
+  
+  <div class="footer">
+    <a href="/About.html">About</a>
+    <a href="/Terms&Conditions.html">Terms&conditions</a>
+    <a href="/Privacypolicy.html">PrivacyPolicy</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+
+  
+</body>
+</html>
+

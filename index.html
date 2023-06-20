@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>AayushTrades:"Transforming Dreams into Reality through Successful Trading in the Indian Stock Market"</title>   
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700|Google+Sans:400,500|Product+Sans:400&display=swap&lang=en">
+  <style>
+    /* Define font styles */
+    html {
+      --google-font-family: "Google Sans", Roboto, Arial, Helvetica;
+      --roboto-font-family: "Roboto", sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 0 209px;
+      font-family: var(--roboto-font-family);
+      background-color: #fff;
+      color: #000;
+      overflow-y: scroll;
+      padding-top: 64px; /* Adjusted padding to reduce space above the navigation bar */
+    }
+    
+    .header {
+      background: rgb(255, 255, 255);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Center the contents horizontally */
+      padding: 0 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      justify-content: center;
+    }
+    
+    .logocenter {
+      font-size: 30px;
+      font-weight: 400;
+      color: black;
+      font-family: var(--google-font-family);
+      display: flex;
+      justify-content: center; /* Add this property to center the logo horizontally */
+      align-items: center; /* Add this property to center the logo vertically */
+      height: 100%; /* Add this property to fill the height of the header */
+    }
+    
+    .navbar {
+      background: #fefefe;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    
+    .navbar a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 10px;
+      font-family: var(--google-font-family);
+      font-size: 16px;
+      font-weight: 500;
+     
+      
+      
+    }
+    
+    .navbar a:hover {
+      color: red; /* Change the color on hover */
+      transform: scale(1.05); /* Add scaling effect on hover */
+    }
+    
+    
+    .navbar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  max-height: 200px; /* Set a maximum height for the dropdown content */
+  overflow-y: auto; /* Add vertical scroll if the content exceeds the maximum height */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.navbar .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+    
+    .navbar .dropdown-arrow {
+      margin-left: 5px;
+      font-size: 12px;
+    }
+    
+    .footer {
+      background-color: #fefefe;
+      text-align: center;
+      padding: 20px;
+      z-index: 100;
+      text-decoration-color: black;
+      font-family: var(--google-font-family);
+    }
+    
+    .footer a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 10px;
+      font-family: var(--google-font-family);
+      font-size: 21px;
+    }
+    
+    .footer a:hover {
+      color: red; /* Change the color on hover */
+      transform: scale(1.05); /* Add scaling effect on hover */
+    }
+    
+    .recent-heading {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 400;
+      margin: 40px 0;
+      font-family: var(--google-font-family); /* Use the var(--google-font-family) for the recent heading */
+      padding-top: 16px;
+     
+    }
+    
+    .blog-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .blog-card {
+      width: 300px;
+      margin: 10px;
+      padding: 10px 20px; /* Adjusted padding values */
+      border: 1px solid #fcf6f6;
+      background-color: transparent;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .blog-title {
+      font-weight: 400;
+      font-size: 18px;
+      font-family: var(--google-font-family);
+    }
+    
+    .blog-content {
+      margin-top: 4px;
+      font-size: 14px;
+      line-height: 1.5;
+      font-family: var(--google-font-family);
+      font-weight: 200;
+    }
+    
+    .load-more-button {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0px;
+     padding-top:  7px;
+    }
+    
+    .load-more-button button {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-family: var(--google-font-family);
+      font-weight: 500;
+      background-color: #000;
+      border: 1px solid #000;
+      cursor: pointer;
+      color: #fefefe;
+    }
+    
+    .load-more-button button:hover {
+      
+      color: aqua;
+    }
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+      background-color: #f8f8f8;
+      text-align: center;
+    }
+
+    .cookie-banner p {
+      margin: 0;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .cookie-banner button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      font-size: 14px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .footer p {
+      margin: 0px 0px;
+      padding-top: 10px;
+      font-family: var(--google-font-family);
+      font-weight: 400;
+    }
+
+    @media screen and (min-width: 377px) and (max-width: 1200px)  {
+      body {
+      margin: 0;
+      padding: 0 30px;
+      font-family: var(--roboto-font-family);
+      background-color: #fff;
+      color: #000;
+      overflow-y: scroll;
+      padding-top: 64px; /* Adjusted padding to reduce space above the navigation bar */
+    }
+    
+    .header {
+      background: rgb(255, 255, 255);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Center the contents horizontally */
+      padding: 0 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      justify-content: center;
+    }
+    
+    .logocenter {
+      font-size: 30px;
+      font-weight: 400;
+      color: black;
+      font-family: var(--google-font-family);
+      display: flex;
+      justify-content: center; /* Add this property to center the logo horizontally */
+      align-items: center; /* Add this property to center the logo vertically */
+      height: 100%; /* Add this property to fill the height of the header */
+    }
+    
+    .navbar {
+      background: #fefefe;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    
+    .navbar a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 6px;
+      font-family: var(--google-font-family);
+      font-size: 16px;
+      font-weight: 500; 
+    }
+    
+    .navbar a:hover {
+      color: red; /* Change the color on hover */
+      transform: scale(1.05); /* Add scaling effect on hover */
+    }
+    
+    
+    .navbar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  max-height: 200px; /* Set a maximum height for the dropdown content */
+  overflow-y: auto; /* Add vertical scroll if the content exceeds the maximum height */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.navbar .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+    
+    .navbar .dropdown-arrow {
+      margin-left: 5px;
+      font-size: 12px;
+    }
+    
+    .footer {
+      background-color: #fefefe;
+      text-align: center;
+      
+      z-index: 100;
+      text-decoration-color: black;
+      font-family: var(--google-font-family);
+    }
+    
+    .footer a {
+      color: #000;
+      text-decoration: none;
+      margin: px 59px;
+      font-family: var(--google-font-family);
+      font-size: 20px;
+      
+    }
+    
+    .footer a:hover {
+      color: red; /* Change the color on hover */
+      transform: scale(1.05); /* Add scaling effect on hover */
+    }
+    
+    .recent-heading {
+      text-align: center;
+      font-size: 34px;
+      font-weight: 400;
+      margin: 15px 0;
+      font-family: var(--google-font-family); /* Use the var(--google-font-family) for the recent heading */
+      padding-top: 32px;
+     
+    }
+    
+    .blog-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .blog-card {
+      width: 300px;
+      margin: 10px;
+      padding: 10px 20px; /* Adjusted padding values */
+      border: 1px solid #fcf6f6;
+      background-color: transparent;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .blog-title {
+      font-weight: 400;
+      font-size: 18px;
+      font-family: var(--google-font-family);
+    }
+    
+    .blog-content {
+      margin-top: 4px;
+      font-size: 14px;
+      line-height: 1.5;
+      font-family: var(--google-font-family);
+      font-weight: 200;
+    }
+    
+    .load-more-button {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0px;
+     padding-top:  7px;
+    }
+    
+    .load-more-button button {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-family: var(--google-font-family);
+      font-weight: 500;
+      background-color: #000;
+      border: 1px solid #000;
+      cursor: pointer;
+      color: #fefefe;
+    }
+    
+    .load-more-button button:hover {
+      
+      color: aqua;
+    }
+  }
+  
+  @media screen and (min-width: 425px) and (max-width: 781px)  {
+    .recent-heading {
+      text-align: center;
+      font-size: 34px;
+      font-weight: 400;
+      margin: 12px 10px;
+      font-family: var(--google-font-family); /* Use the var(--google-font-family) for the recent heading */
+      padding-top: 32px;
+      
+     
+    }
+    .footer a {
+      color: #000;
+      text-decoration: none;
+      margin-left: 7px;
+      font-family: var(--google-font-family);
+      font-size: 20px;
+    
+    }
+
+  }
+  @media screen and (min-width: 300px) and (max-width: 376px)  {
+    .navbar a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 6px;
+      font-family: var(--google-font-family);
+      font-size: 16px;
+      font-weight: 500; 
+      padding: 0px 0px;
+    }
+    body {
+      margin: 0;
+      padding: 0 30px;
+      font-family: var(--roboto-font-family);
+      background-color: #fff;
+      color: #000;
+      overflow-y: scroll;
+      padding-top: 64px; /* Adjusted padding to reduce space above the navigation bar */
+    }
+    .navbar a {
+      padding: 0px 0px;
+      color: #000;
+      text-decoration: none;
+      margin: 0 5px;
+      font-family: var(--google-font-family);
+      font-size: 13px;
+      font-weight: 500; 
+    }
+  }
+    
+  </style>
+  <!-- Add the Google AdSense code -->
+  <script data-ad-client="YOUR_ADSENSE_CLIENT_ID" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="header">
+    <div class="logocenter">
+      AayushTrades
+    </div>
+  </div>
+
+  <div class="navbar">
+    <a href="aayushtrades.com">Home</a>
+    <div class="dropdown">
+      <a href="#">Blogs<span class="dropdown-arrow">▼</span></a>
+      <div class="dropdown-content">
+        <a href="#">Trending</a>
+        <a href="#">Popular</a>
+        <a href="#">Featured</a>
+        <a href="#">Recent</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#">Categories<span class="dropdown-arrow">▼</span></a>
+      <div class="dropdown-content">
+        <a href="#">Step by step guide to enter stockmarket</a>
+        <a href="https://rpy.club/courses/TilySSWJ5g">Master charts analysis and Trading</a>
+        <a href="#">What is stockmarket? Explained</a>
+        <a href="#">what is exchange and index? Explained</a>
+        <a href="#">Option Trading? Explained</a>
+        <a href="#">Intraday Trading? Explained</a>
+        <a href="#">Futures Trading? Explained</a>
+        <a href="#">What are stocks? Explained</a>
+        <a href="#">Stock intraday? Explained</a>
+        <a href="#">Stock holding? Explained</a>
+        <a href="#">Stock options? Explained</a>
+        <a href="#"> Read dailynews blogs of stockmarkets</a>
+
+
+
+
+        
+      </div>
+    </div>
+    <a href="/About.html">About</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+
+  <!-- <h1 class="recent-heading"></h1>-->
+  <a href="/Ads.txt"></a>
+  <a href="/ads.txt"></a>
+
+ <!-- <div class="load-more-button">
+    <button id="loadMoreButton">Load More</button>
+  </div>-->
+  <div id="cookieBanner" class="cookie-banner">
+    <p>This website uses cookies to ensure you get the best experience.</p>
+    <button onclick="acceptCookies()">Accept</button>
+  </div>
+
+  <div class="footer">
+    <a href="/About.html">About</a>
+    <a href="/Terms&Conditions.html">Terms&conditions</a>
+    <a href="Privacypolicy.html">PrivacyPolicy</a>
+    <a href="contact.html">Contact</a>
+    <p>&copy; Aayushtradescom. All rights reserved.</p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const blogContainer = document.getElementById("blogContainer");
+      const loadMoreButton = document.getElementById("loadMoreButton");
+
+      const blogs = [
+        {
+          title: "Blog Title 1",
+          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        },
+        {
+          title: "Blog Title 2",
+          content: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        },
+        {
+          title: "Blog Title 3",
+          content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        },
+        {
+          title: "Blog Title 4",
+          content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        },
+        {
+          title: "Blog Title 5",
+          content: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        },
+        {
+          title: "Blog Title 6",
+          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        },
+        {
+          title: "Blog Title 7",
+          content: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        },
+        {
+          title: "Blog Title 8",
+          content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        },
+        {
+          title: "Blog Title 9",
+          content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        },
+        {
+          title: "Blog Title 10",
+          content: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        },
+        // Add more blogs here
+      ];
+
+      let startIndex = 0;
+      let endIndex = 9;
+      const batchSize = 3;
+
+      function displayBlogs(start, end) {
+        for (let i = start; i < end; i++) {
+          const blogCard = document.createElement("div");
+          blogCard.classList.add("blog-card");
+
+          const blogTitle = document.createElement("h3");
+          blogTitle.classList.add("blog-title");
+          blogTitle.innerText = blogs[i].title;
+
+          const blogContent = document.createElement("p");
+          blogContent.classList.add("blog-content");
+          blogContent.innerText = blogs[i].content;
+
+          blogCard.appendChild(blogTitle);
+          blogCard.appendChild(blogContent);
+
+          blogContainer.appendChild(blogCard);
+        }
+      }
+
+      function loadMoreBlogs() {
+        if (endIndex >= blogs.length) {
+          loadMoreButton.style.display = "none";
+        } else {
+          startIndex = endIndex;
+          endIndex += batchSize;
+
+          displayBlogs(startIndex, endIndex);
+        }
+      }
+
+      // Initial display of blogs
+      displayBlogs(startIndex, endIndex);
+
+      // Load more blogs on button click
+      loadMoreButton.addEventListener("click", loadMoreBlogs);
+    });
+  </script>
+    <script>
+    function acceptCookies() {
+      // Set a cookie to indicate that the user has accepted the use of cookies
+      var expiryDate = new Date();
+      expiryDate.setMonth(expiryDate.getMonth() + 2);
+      document.cookie = "cookieConsent=true; expires=" + expiryDate.toUTCString();
+
+      // Hide the cookie consent banner
+      var cookieBanner = document.getElementById("cookieBanner");
+      cookieBanner.style.display = "none";
+    }
+
+    // Check if the user has already accepted cookies
+    if (document.cookie.indexOf("cookieConsent=true") !== -1) {
+      var cookieBanner = document.getElementById("cookieBanner");
+      cookieBanner.style.display = "none";
+    }
+  </script>
+  <script>
+    function setCookie(name, value, months) {
+  var expires = "";
+  if (months) {
+    var date = new Date();
+    date.setMonth(date.getMonth() + months);
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+setCookie("username", "John Doe", 2);  
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var cookies = document.cookie.split(';');
+  for (var i = 0; i < cookies.length; i++) {
+    var cookie = cookies[i];
+    while (cookie.charAt(0) === ' ') {
+      cookie = cookie.substring(1, cookie.length);
+    }
+    if (cookie.indexOf(nameEQ) === 0) {
+      return cookie.substring(nameEQ.length, cookie.length);
+    }
+  }
+  return null;
+}
+
+var username = getCookie("username");  // Get the value of the cookie named "username"
+function deleteCookie(name) {
+  document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+
+deleteCookie("username");  // Delete the cookie named "username"
+
+
+  </script>
+  <script>
+    function acceptCookies() {
+      document.getElementById('cookieBanner').style.display = 'none';
+      // Set a cookie to remember user's preference
+      document.cookie = 'cookieConsent=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/';
+    }
+
+    function checkCookieConsent() {
+      var consentCookie = document.cookie.match('(^|;) ?cookieConsent=([^;]*)(;|$)');
+      if (consentCookie) {
+        // User has accepted cookies
+        document.getElementById('cookieBanner').style.display = 'none';
+      } else {
+        // Show cookie banner
+        document.getElementById('cookieBanner').style.display = 'block';
+      }
+    }
+
+    window.addEventListener('load', checkCookieConsent);
+  </script>
+</body>
+</html>
